@@ -1,8 +1,15 @@
-import React from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../AuthContexts/AuthContext";
 import Container from "../Components/Container";
 
 const Navbar = () => {
+  const { user, signOutUser } = useContext(AuthContext);
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {})
+      .catch(() => {});
+  };
   const links = (
     <>
       <li>
@@ -35,16 +42,18 @@ const Navbar = () => {
           Apps
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to={"/installed"}
-          className={({ isActive }) =>
-            isActive ? "text-red-500 font-bold" : "text-black"
-          }
-        >
-          Installed
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink
+            to={"/installed"}
+            className={({ isActive }) =>
+              isActive ? "text-red-500 font-bold" : "text-black"
+            }
+          >
+            Installed
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (
@@ -81,15 +90,33 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <Link to={'/'} className="btn btn-ghost text-xl">Best Store</Link>
+            <Link to={"/"} className="btn btn-ghost text-xl">
+              Best Store
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>
           </div>
           <div className="navbar-end">
-            <Link to={"/login"} className="btn">
-              Sign in
-            </Link>
+            {user ? (
+              <>
+                <div className="avatar">
+                  <div className="w-10 rounded-full mx-2">
+                    <img src={user.photoURL} />
+                  </div>
+                </div>
+                <p className="mr-4 font-semibold">
+                  {user.displayName || user.email}
+                </p>
+                <button onClick={handleSignOut} className="btn">
+                  Sign out
+                </button>
+              </>
+            ) : (
+              <Link to={"/login"} className="btn">
+                Sign in
+              </Link>
+            )}
           </div>
         </div>
       </Container>

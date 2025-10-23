@@ -1,21 +1,29 @@
 import React, { useContext } from "react";
 import Container from "../Components/Container";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../AuthContexts/AuthContext";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const confirmPassword = e.target.confirmPassword.value
-    console.log({name, email, password, confirmPassword})
+    const confirmPassword = e.target.confirmPassword.value;
+    console.log({ name, email, password, confirmPassword });
 
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        updateUserProfile(name)
+          .then(() => {
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log("Error:", error.message);
+          });
       })
       .catch((error) => {
         console.log("Error:", error.message);
@@ -65,7 +73,7 @@ const Register = () => {
                 <button className="btn btn-neutral mt-4">Register</button>
               </fieldset>
               {/* login page route */}
-              <p className="mt-2 font-medium">
+              <p className="mt-2 font-medium text-center">
                 Already have an account?{" "}
                 <Link
                   to="/login"
