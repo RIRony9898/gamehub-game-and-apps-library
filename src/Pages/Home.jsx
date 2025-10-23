@@ -1,14 +1,25 @@
-import React from 'react';
-import Container from '../Components/Container';
+import React from "react";
+import Container from "../Components/Container";
+import Banner from "../Components/HomePage/Banner";
+import PopularGames from "../Components/HomePage/PopularGames";
+import PopularApps from "../Components/HomePage/PopularApps";
 
 const Home = () => {
-    return (
-        <div>
-            <Container>
-                <h2 className='text-3xl font-bold text-center my-5'>This is Home Page</h2>
-            </Container>
-        </div>
-    );
+  return (
+    <div>
+      <Container>
+        <section>
+          <Banner />
+        </section>
+        <section>
+          <PopularGames />
+        </section>
+        <section>
+          <PopularApps />
+        </section>
+      </Container>
+    </div>
+  );
 };
 
 export default Home;
