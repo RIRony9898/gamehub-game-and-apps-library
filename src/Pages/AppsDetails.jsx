@@ -2,11 +2,17 @@ import { Download, Star } from "lucide-react";
 import { useParams } from "react-router";
 import useApps from "../Hooks/useApps";
 import useTitle from "../Hooks/useTitle";
+import { useContext } from "react";
+import { InstallationContext } from "../context/installationContextObject";
+import { toast } from "react-toastify";
 
 const AppsDetails = () => {
   const { id } = useParams();
   const { apps, loading } = useApps();
   const app = apps.find((a) => a.id === id);
+  const { installApp, installedApps } = useContext(InstallationContext);
+
+  const isInstalled = installedApps.some((installedApp) => installedApp.id === app?.id);
 
   useTitle(app ? app.title : "App Details");
 
@@ -38,6 +44,20 @@ const AppsDetails = () => {
     googlePlayLink,
     appleStoreLink,
   } = app;
+
+  const handleInstall = () => {
+    const appToInstall = {
+      id: app.id,
+      image: app.coverPhoto,
+      title: app.title,
+      downloads: app.downloaded,
+      ratingAvg: app.ratings,
+      size: app.size,
+      userEmail: "", 
+    };
+    installApp(appToInstall);
+    toast.success(`${app.title} installed successfully!`);
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -74,6 +94,13 @@ const AppsDetails = () => {
             </p>
           </div>
           <div className="flex">
+            <button
+              onClick={handleInstall}
+              className={`text-white font-bold py-2 px-4 rounded mr-4 ${isInstalled ? "bg-gray-500 cursor-not-allowed" : "bg-green-500 hover:bg-green-600"}`}
+              disabled={isInstalled}
+            >
+              {isInstalled ? "Installed" : "Install Now"}
+            </button>
             <a
               href={googlePlayLink}
               target="_blank"
