@@ -1,11 +1,14 @@
 import { Download, Star } from "lucide-react";
 import { useParams } from "react-router";
 import useGames from "../Hooks/useGames";
+import useTitle from "../Hooks/useTitle";
 
 const GameDetails = () => {
   const { id } = useParams();
   const { games, loading } = useGames();
   const game = games.find((g) => g.id === id);
+
+  useTitle(game ? game.title : "Game Details");
 
   if (loading) {
     return (

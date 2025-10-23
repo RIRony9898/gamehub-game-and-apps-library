@@ -100,11 +100,15 @@ const Navbar = () => {
           <div className="navbar-end">
             {user ? (
               <>
-                <div className="avatar">
-                  <div className="w-10 rounded-full mx-2">
-                    <img src={user.photoURL} />
-                  </div>
-                </div>
+                {user.photoURL ? (
+                  <>
+                    <div className="avatar">
+                      <div className="w-10 rounded-full mx-2">
+                        <img src={user.photoURL} />
+                      </div>
+                    </div>
+                  </>
+                ) : null}
                 <p className="mr-4 font-semibold">
                   {user.displayName || user.email}
                 </p>

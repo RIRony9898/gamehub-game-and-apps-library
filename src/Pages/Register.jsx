@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import Container from "../Components/Container";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../AuthContexts/AuthContext";
+import useTitle from "../Hooks/useTitle";
 
 const Register = () => {
+  useTitle("Register");
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSubmit = (e) => {

@@ -1,11 +1,14 @@
 import { Download, Star } from "lucide-react";
 import { useParams } from "react-router";
 import useApps from "../Hooks/useApps";
+import useTitle from "../Hooks/useTitle";
 
 const AppsDetails = () => {
   const { id } = useParams();
   const { apps, loading } = useApps();
   const app = apps.find((a) => a.id === id);
+
+  useTitle(app ? app.title : "App Details");
 
   if (loading) {
     return (

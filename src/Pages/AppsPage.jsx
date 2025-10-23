@@ -1,8 +1,10 @@
 import useApps from "../Hooks/useApps";
 import AppsCard from "../Components/AppsPage/AppsCard";
 import Container from "../Components/Container";
+import useTitle from "../Hooks/useTitle";
 
 const AppsPage = () => {
+  useTitle("Apps");
   const { apps } = useApps();
   return (
     <div>

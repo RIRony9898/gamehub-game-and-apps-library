@@ -3,8 +3,10 @@ import Container from "../Components/Container";
 import Banner from "../Components/HomePage/Banner";
 import PopularGames from "../Components/HomePage/PopularGames";
 import PopularApps from "../Components/HomePage/PopularApps";
+import useTitle from "../Hooks/useTitle";
 
 const Home = () => {
+  useTitle("Home");
   return (
     <div>
       <Container>

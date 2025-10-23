@@ -1,8 +1,10 @@
 import Container from "../Components/Container";
 import GameCard from "../Components/GamePage/GameCard";
 import useGames from "../Hooks/useGames";
+import useTitle from "../Hooks/useTitle";
 
 const GamePage = () => {
+  useTitle("Games");
   const { games } = useGames();
   return (
     <div>
