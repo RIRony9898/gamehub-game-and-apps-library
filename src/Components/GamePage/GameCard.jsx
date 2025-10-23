@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const GameCard = ({ game }) => {
   const { title, coverPhoto, downloaded, ratings } = game;
   return (
-    <Link to={`/apps/${game.id}`}>
+    <Link to={`/game/${game.id}`}>
       <div className="card w-full bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-lg overflow-hidden transform hover:scale-105">
         <figure className="h-48 w-full bg-gray-100 flex items-center justify-center p-4">
           <img

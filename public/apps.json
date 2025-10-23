@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "TikTok",
-    "coverPhoto": "https://play-lh.googleusercontent.com/V9j-7JxY2Pl4V-j4Z8nQ6IprbR9Q=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/sUXm7uP_c8ysJqwOkbmIpBnDee_6lJJCPODRP4DOCuFWp9Gq-_X_oqY9NTJ2OIEGtQ=w480-h960-rw",
     "category": "Social / Video Sharing",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically",
     "appleStoreLink": "https://apps.apple.com/us/app/tiktok/id835599320",
@@ -15,7 +15,7 @@
   {
     "id": "2",
     "title": "Instagram",
-    "coverPhoto": "https://play-lh.googleusercontent.com/M83Qzv6q4zJ5Xc-kDqQlX6s7a5=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/ZIrCcsga5EiJpCqQtOzuVFSHY4yOiESvZrLFy-gC0OGHZ9fKM018odPj2Q0TPmrOpRvD=w480-h960-rw",
     "category": "Social / Photo & Video",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.instagram.android",
     "appleStoreLink": "https://apps.apple.com/us/app/instagram/id389801252",
@@ -28,7 +28,7 @@
   {
     "id": "3",
     "title": "WhatsApp Messenger",
-    "coverPhoto": "https://play-lh.googleusercontent.com/Zh6RqNbP-q9X7MqblPb9ZJw=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN=w480-h960-rw",
     "category": "Messaging / Communication",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.whatsapp",
     "appleStoreLink": "https://apps.apple.com/us/app/whatsapp-messenger/id310633997",
@@ -41,7 +41,7 @@
   {
     "id": "4",
     "title": "Telegram Messenger",
-    "coverPhoto": "https://play-lh.googleusercontent.com/8Dv-B0JAi3S0WJNB-m3Q=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/ZU9cSsyIJZo6Oy7HTHiEPwZg0m2Crep-d5ZrfajqtsH-qgUXSqKpNA2FpPDTn-7qA5Q=w480-h960-rw",
     "category": "Messaging / Communication",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=org.telegram.messenger",
     "appleStoreLink": "https://apps.apple.com/us/app/telegram-messenger/id686449807",
@@ -54,7 +54,7 @@
   {
     "id": "5",
     "title": "Snapchat",
-    "coverPhoto": "https://play-lh.googleusercontent.com/w0W-qQjQ=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/KxeSAjPTKliCErbivNiXrd6cTwfbqUJcbSRPe_IBVK_YmwckfMRS1VIHz-5cgT09yMo=w480-h960-rw",
     "category": "Social / Multimedia",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.snapchat.android",
     "appleStoreLink": "https://apps.apple.com/us/app/snapchat/id447188370",
@@ -67,7 +67,7 @@
   {
     "id": "6",
     "title": "CapCut",
-    "coverPhoto": "https://play-lh.googleusercontent.com/123CapCutImage=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/NafAciugdQk6L7_D0cmNq8cypX0pvA88h9DzlxIJQbPd3caZM3_S5-nZedHdnrcq_wCm=w480-h960-rw",
     "category": "Video Editor / Creative",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.lemon.lvoverseas",
     "appleStoreLink": "https://apps.apple.com/us/app/capcut-video-editor/id1500855883",
@@ -80,7 +80,7 @@
   {
     "id": "7",
     "title": "YouTube",
-    "coverPhoto": "https://play-lh.googleusercontent.com/YouTubeImage=s180-rw",
+    "coverPhoto": "https://1000logos.net/wp-content/uploads/2017/05/Youtube-Logo-768x432.png",
     "category": "Video / Streaming",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.google.android.youtube",
     "appleStoreLink": "https://apps.apple.com/us/app/youtube/id544007664",
@@ -93,7 +93,7 @@
   {
     "id": "8",
     "title": "Google Maps",
-    "coverPhoto": "https://play-lh.googleusercontent.com/GoogleMapsImage=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/Kf8WTct65hFJxBUDm5E-EpYsiDoLQiGGbnuyP6HBNax43YShXti9THPon1YKB6zPYpA=w480-h960-rw",
     "category": "Navigation / Travel",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.google.android.apps.maps",
     "appleStoreLink": "https://apps.apple.com/us/app/google-maps-transit-food/id585027354",
@@ -106,7 +106,7 @@
   {
     "id": "9",
     "title": "Gmail",
-    "coverPhoto": "https://play-lh.googleusercontent.com/GmailImage=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/KSuaRLiI_FlDP8cM4MzJ23ml3og5Hxb9AapaGTMZ2GgR103mvJ3AAnoOFz1yheeQBBI=w480-h960-rw",
     "category": "Email / Productivity",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.google.android.gm",
     "appleStoreLink": "https://apps.apple.com/us/app/gmail-email-by-google/id422689480",
@@ -119,7 +119,7 @@
   {
     "id": "10",
     "title": "Microsoft Outlook",
-    "coverPhoto": "https://play-lh.googleusercontent.com/OutlookImage=s180-rw",
+    "coverPhoto": "https://1000logos.net/wp-content/uploads/2022/01/Outlook-Logo-768x432.png",
     "category": "Email / Productivity",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.microsoft.office.outlook",
     "appleStoreLink": "https://apps.apple.com/us/app/microsoft-outlook/id951937596",
@@ -132,7 +132,7 @@
   {
     "id": "11",
     "title": "Zoom",
-    "coverPhoto": "https://play-lh.googleusercontent.com/ZoomImage=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/yZsmiNjmji3ZoOuLthoVvptLB9cZ0vCmitcky4OUXNcEFV3IEQkrBD2uu5kuWRF5_ERA=w480-h960-rw",
     "category": "Communication / Video conferencing",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=us.zoom.videomeetings",
     "appleStoreLink": "https://apps.apple.com/us/app/zoom-cloud-meetings/id546505307",
@@ -145,7 +145,7 @@
   {
     "id": "12",
     "title": "Spotify",
-    "coverPhoto": "https://play-lh.googleusercontent.com/SpotifyImage=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/7ynvVIRdhJNAngCg_GI7i8TtH8BqkJYmffeUHsG-mJOdzt1XLvGmbsKuc5Q1SInBjDKN=w480-h960-rw",
     "category": "Music / Audio streaming",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.spotify.music",
     "appleStoreLink": "https://apps.apple.com/us/app/spotify-music-and-podcasts/id324684580",
@@ -158,7 +158,7 @@
   {
     "id": "13",
     "title": "Amazon Shopping",
-    "coverPhoto": "https://play-lh.googleusercontent.com/AmazonShoppingImage=s180-rw",
+    "coverPhoto": "https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo-768x432.png",
     "category": "Shopping / E-commerce",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.amazon.mShop.android.shopping",
     "appleStoreLink": "https://apps.apple.com/us/app/amazon-shopping/id297606951",
@@ -171,7 +171,7 @@
   {
     "id": "14",
     "title": "eBay",
-    "coverPhoto": "https://play-lh.googleusercontent.com/eBayImage=s180-rw",
+    "coverPhoto": "https://1000logos.net/wp-content/uploads/2018/10/Ebay-Logo-1.png",
     "category": "Shopping / Marketplace",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.ebay.mobile",
     "appleStoreLink": "https://apps.apple.com/us/app/ebay-shopping-savings/id282614216",
@@ -184,7 +184,7 @@
   {
     "id": "15",
     "title": "PayPal",
-    "coverPhoto": "https://play-lh.googleusercontent.com/PayPalImage=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/xOKbvDt362x1uzW-nnggP-PgO9HM4L1vwBl5HgHFHy_n1X3mqeBtOSoIyNJzTS3rrj70=w480-h960-rw",
     "category": "Finance / Payments",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile",
     "appleStoreLink": "https://apps.apple.com/us/app/paypal-mobile-cash/id283646709",
@@ -197,7 +197,7 @@
   {
     "id": "16",
     "title": "Google Drive",
-    "coverPhoto": "https://play-lh.googleusercontent.com/GoogleDriveImage=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/t-juVwXA8lDAk8uQ2L6d6K83jpgQoqmK1icB_l9yvhIAQ2QT_1XbRwg5IpY08906qEw=w480-h960-rw",
     "category": "Productivity / Cloud storage",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.google.android.apps.docs",
     "appleStoreLink": "https://apps.apple.com/us/app/google-drive-cloud-storage/id507874739",
@@ -210,7 +210,7 @@
   {
     "id": "17",
     "title": "Microsoft OneDrive",
-    "coverPhoto": "https://play-lh.googleusercontent.com/OneDriveImage=s180-rw",
+    "coverPhoto": "https://1000logos.net/wp-content/uploads/2023/01/OneDrive-logo-768x432.png",
     "category": "Productivity / Cloud storage",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.microsoft.skydrive",
     "appleStoreLink": "https://apps.apple.com/us/app/microsoft-onedrive/id477537958",
@@ -223,7 +223,7 @@
   {
     "id": "18",
     "title": "Google Photos",
-    "coverPhoto": "https://play-lh.googleusercontent.com/GooglePhotosImage=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/ZyWNGIfzUyoajtFcD7NhMksHEZh37f-MkHVGr5Yfefa-IX7yj9SMfI82Z7a2wpdKCA=w480-h960-rw",
     "category": "Photography / Cloud storage",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos",
     "appleStoreLink": "https://apps.apple.com/us/app/google-photos/id962194608",
@@ -236,7 +236,7 @@
   {
     "id": "19",
     "title": "Trello",
-    "coverPhoto": "https://play-lh.googleusercontent.com/TrelloImage=s180-rw",
+    "coverPhoto": "https://1000logos.net/wp-content/uploads/2021/05/Trello-logo-768x432.png",
     "category": "Productivity / Project Management",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.trello",
     "appleStoreLink": "https://apps.apple.com/us/app/trello-organize-anything/id461504587",
@@ -249,7 +249,7 @@
   {
     "id": "20",
     "title": "Duolingo",
-    "coverPhoto": "https://play-lh.googleusercontent.com/DuolingoImage=s180-rw",
+    "coverPhoto": "https://play-lh.googleusercontent.com/tw_coGKgk1K_zO-Ypf9zBKV1s-KT3dYN1MIUxIqtnbfmON5x_YmuoAr31gE4oSfJHNtA-aStTd-qe9R8S6NVyA=w480-h960-rw",
     "category": "Education / Language learning",
     "googlePlayLink": "https://play.google.com/store/apps/details?id=com.duolingo",
     "appleStoreLink": "https://apps.apple.com/us/app/duolingo-language-lessons/id570060128",

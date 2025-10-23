@@ -9,8 +9,14 @@ const useGames = () => {
     useEffect(()=>{
         setLoading(true)
         axios('../games.json')
-        .then(data => setGames(data.data))
-        .catch(err => setError(err))
+        .then(data => {
+            setGames(data.data)
+            setLoading(false) // Set loading to false after data is fetched
+        })
+        .catch(err => {
+            setError(err)
+            setLoading(false) // Also set loading to false on error
+        })
     },[])
 
     return {games, loading, error}

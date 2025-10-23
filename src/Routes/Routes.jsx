@@ -7,6 +7,8 @@ import Register from "../Pages/Register";
 import GamePage from "../Pages/GamePage";
 import AppsPage from "../Pages/AppsPage";
 import InstalledPage from "../Pages/InstalledPage";
+import GameDetails from "../Pages/GameDetails";
+import AppsDetails from "../Pages/AppsDetails";
 
 const router = createBrowserRouter([
     {
@@ -31,8 +33,16 @@ const router = createBrowserRouter([
                 element: <GamePage/>
             },
             {
+                path: '/game/:id',
+                element: <GameDetails/>
+            },
+            {
                 path: '/apps',
                 element: <AppsPage/>
+            },
+            {
+                path: '/apps/:id', // Add new route for AppsDetails
+                element: <AppsDetails/>
             },
             {
                 path: '/installed',
