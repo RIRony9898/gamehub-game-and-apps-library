@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@stitches/react": "^1.2.8",
     "@tailwindcss/vite": "^4.1.14",
     "axios": "^1.12.2",
     "firebase": "^12.4.0",
@@ -17,6 +19,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router": "^7.9.4",
+    "react-spring": "^10.0.3",
     "react-toastify": "^11.0.5",
     "tailwindcss": "^4.1.14"
   },

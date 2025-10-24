@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Container from "../Components/Container";
 import { InstallationContext } from "../context/installationContextObject";
 import { toast } from "react-toastify";
-import InstalledAppsCard from "../Components/InstalledAppsCard";
+import InstalledAppsCard from "../Components/InstalledPage/InstalledAppsCard";
 import useTitle from "../Hooks/useTitle";
 
 const InstalledPage = () => {
@@ -12,7 +12,6 @@ const InstalledPage = () => {
   const [sortOrder, setSortOrder] = useState(""); 
 
   console.log("Installed apps in InstalledPage:", installedApps);
-
 
   const parseDownloads = (downloads) => {
     const num = parseFloat(downloads);

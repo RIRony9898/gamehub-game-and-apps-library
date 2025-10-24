@@ -2,15 +2,18 @@ import { Download, Star } from "lucide-react";
 import { useParams } from "react-router";
 import useGames from "../Hooks/useGames";
 import useTitle from "../Hooks/useTitle";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { InstallationContext } from "../context/installationContextObject";
 import { toast } from "react-toastify";
+import { StyledInstallButton, TriggerShadow, TriggerEdge, TriggerLabel } from "../Components/animation/StyledInstallButton";
+import InstallButtonAnimation from "../Components/animation/InstallButtonAnimation";
 
 const GameDetails = () => {
   const { id } = useParams();
   const { games, loading } = useGames();
   const game = games.find((g) => g.id === id);
   const { installApp, installedApps } = useContext(InstallationContext);
+  const [showInstallModal, setShowInstallModal] = useState(false);
 
   const isInstalled = installedApps.some((app) => app.id === game?.id);
 
@@ -57,6 +60,7 @@ const GameDetails = () => {
     };
     installApp(appToInstall);
     toast.success(`${game.title} installed successfully!`);
+    setShowInstallModal(true);
   };
 
   return (
@@ -94,13 +98,14 @@ const GameDetails = () => {
             </p>
           </div>
           <div className="flex">
-            <button
+            <StyledInstallButton
               onClick={handleInstall}
-              className={`text-white font-bold py-2 px-4 rounded mr-4 ${isInstalled ? "bg-gray-500 cursor-not-allowed" : "bg-green-500 hover:bg-green-600"}`}
               disabled={isInstalled}
             >
-              {isInstalled ? "Installed" : "Install Now"}
-            </button>
+              <TriggerShadow />
+              <TriggerEdge />
+              <TriggerLabel>{isInstalled ? "Installed" : "Install Now"}</TriggerLabel>
+            </StyledInstallButton>
             <a
               href={googlePlayLink}
               target="_blank"
@@ -120,6 +125,7 @@ const GameDetails = () => {
           </div>
         </div>
       </div>
+      <InstallButtonAnimation isOpen={showInstallModal} onClose={() => setShowInstallModal(false)} />
     </div>
   );
 };
