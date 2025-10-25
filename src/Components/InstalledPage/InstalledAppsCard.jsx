@@ -22,12 +22,12 @@ const InstalledAppsCard = ({ app, onUninstall }) => {
 
           {/* App Info */}
           <div className="flex items-center flex-wrap gap-x-4 gap-y-1 text-sm text-gray-500">
-            <div className="flex items-center gap-1.5">
-              <Download size={14} />
+            <div className="flex items-center text-blue-600 font-semibold">
+              <Download className="w-5 h-5 mr-1" />
               <span>{app.downloads}</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <Star size={14} />
+            <div className="flex items-center text-yellow-500 font-semibold">
+              <Star className="w-5 h-5 mr-1 fill-current" />
               <span>{app.ratingAvg}</span>
             </div>
             <span>{app.size}</span>

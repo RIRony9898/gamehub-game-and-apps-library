@@ -1,17 +1,41 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Container from "../Components/Container";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../AuthContexts/AuthContext";
 import useTitle from "../Hooks/useTitle";
+import { Eye, EyeOff } from "lucide-react";
+import { toast } from "react-toastify";
 
 const Login = () => {
   useTitle("Login");
-  const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
+  const [showPassword, setShowPassword] = useState(false);
+  const [formError, setFormError] = useState('');
+  const { signInUser, signInWithGoogle, resetPassword } = useContext(AuthContext);
+
+  const handleForgotPassword = () => {
+    const email = document.querySelector('input[name="email"]').value;
+    if (!email) {
+      setFormError('Please enter your email to reset password.');
+      toast.error('Please enter your email to reset password.');
+      return;
+    }
+    setFormError('');
+    resetPassword(email)
+      .then(() => {
+        toast.success('Password reset email sent! Check your inbox.');
+      })
+      .catch((error) => {
+        setFormError(error.message);
+        toast.error(error.message);
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormError('');
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log({ email, password });
@@ -23,10 +47,13 @@ const Login = () => {
       })
       .catch((error) => {
         console.log("Error: ", error.message);
+        setFormError(error.message);
+        toast.error(error.message);
       });
   };
 
   const handleGoogleSignIn = () => {
+    setFormError('');
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
@@ -34,6 +61,8 @@ const Login = () => {
       })
       .catch((error) => {
         console.log("Error: ", error.message);
+        setFormError(error.message);
+        toast.error(error.message);
       });
   };
   return (
@@ -54,19 +83,28 @@ const Login = () => {
                 />
                 {/* password */}
                 <label className="label">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  className="input"
-                  placeholder="Password"
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    className="input pr-10 w-full"
+                    placeholder="Password"
+                  />
+                  <span
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer z-50"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  </span>
+                </div>
                 {/* forgot password */}
                 <div>
-                  <a className="link link-hover">Forgot password?</a>
+                  <a onClick={handleForgotPassword} className="link link-hover cursor-pointer">Forgot password?</a>
                 </div>
                 {/* login button */}
                 <button className="btn btn-neutral mt-4">Login</button>
               </fieldset>
+              {formError && <p className="text-red-500 text-xs mt-2 text-center">{formError}</p>}
               {/* google sign in button */}
               <div className="divider">OR</div>
               {/* Google */}

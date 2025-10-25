@@ -97,7 +97,7 @@ const GameDetails = () => {
               <span className="font-bold">Size:</span> {size}
             </p>
           </div>
-          <div className="flex">
+          <div className="flex gap-4">
             <StyledInstallButton
               onClick={handleInstall}
               disabled={isInstalled}
@@ -110,7 +110,7 @@ const GameDetails = () => {
               href={googlePlayLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-4"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
             >
               Google Play
             </a>

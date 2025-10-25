@@ -69,10 +69,10 @@ const InstalledPage = () => {
               className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a onClick={() => setSortOrder("asc")}>Low -{`>`} High</a>
+                <a onClick={() => setSortOrder("desc")}>Low -{`>`} High</a>
               </li>
               <li>
-                <a onClick={() => setSortOrder("desc")}>High -{`>`} Low</a>
+                <a onClick={() => setSortOrder("asc")}>High -{`>`} Low</a>
               </li>
             </ul>
           </div>
