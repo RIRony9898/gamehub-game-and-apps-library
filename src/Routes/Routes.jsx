@@ -11,6 +11,8 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import UserProfile from "../Pages/UserProfile";
+import PasswordChange from "../Components/ProfilePage/PasswordChange";
+import ProfileUpdate from "../Components/ProfilePage/ProfileUpdate";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +69,22 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <UserProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/passwordChange",
+        element: (
+          <PrivateRoute>
+            <PasswordChange />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/profileUpdate",
+        element: (
+          <PrivateRoute>
+            <ProfileUpdate />
           </PrivateRoute>
         ),
       },

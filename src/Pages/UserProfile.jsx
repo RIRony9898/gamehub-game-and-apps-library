@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router";
 import { AuthContext } from "../AuthContexts/AuthContext";
 import Container from "../Components/Container";
 import useTitle from "../Hooks/useTitle";
@@ -6,6 +7,7 @@ import useTitle from "../Hooks/useTitle";
 const UserProfile = () => {
   useTitle("Profile");
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   //   if (!user) {
   //     return (
@@ -105,16 +107,27 @@ const UserProfile = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Quick Actions Buttons */}
             <div className="bg-base-100 shadow-lg rounded-lg p-6">
               <h2 className="text-2xl font-semibold mb-4">Quick Actions</h2>
               <div className="space-y-3">
-                <button className="btn btn-primary w-full">Edit Profile</button>
-                <button className="btn btn-outline w-full">
+                <button
+                  className="btn btn-primary w-full"
+                  onClick={() => navigate("/profileUpdate")}
+                >
+                  Edit Profile
+                </button>
+                <button
+                  className="btn btn-outline w-full"
+                  onClick={() => navigate("/passwordChange")}
+                >
                   Change Password
                 </button>
-                <button className="btn btn-outline btn-warning w-full">
+                <button
+                  className="btn btn-outline btn-warning w-full"
+                  onClick={() => navigate("/installed")}
+                >
                   View Installed Apps
                 </button>
               </div>

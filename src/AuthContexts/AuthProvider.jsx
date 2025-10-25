@@ -2,11 +2,12 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updatePassword,
   updateProfile,
-  sendPasswordResetEmail,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth } from "../Firebase/firebase.config";
@@ -36,10 +37,18 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const updateUserProfile = (name) => {
-    return updateProfile(auth.currentUser, {
-      displayName: name,
-    });
+  //update user profile
+  const updateUserProfile = (name, photoURL = null) => {
+    const updates = { displayName: name };
+    if (photoURL) {
+      updates.photoURL = photoURL;
+    }
+    return updateProfile(auth.currentUser, updates);
+  };
+
+  //update password
+  const changePassword = async (newPassword) => {
+    return updatePassword(auth.currentUser, newPassword);
   };
 
   const resetPassword = (email) => {
@@ -67,6 +76,7 @@ const AuthProvider = ({ children }) => {
     signInWithGoogle,
     signOutUser,
     updateUserProfile,
+    changePassword,
     resetPassword,
     user,
     loading,
