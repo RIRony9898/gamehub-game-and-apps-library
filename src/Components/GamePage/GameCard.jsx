@@ -6,7 +6,7 @@ const GameCard = ({ game }) => {
   return (
     <Link to={`/game/${game.id}`}>
       <div className="card w-full bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-lg overflow-hidden transform hover:scale-105">
-        <figure className="h-48 w-full bg-gray-100 flex items-center justify-center p-4">
+        <figure className="h-48 w-full bg-slate-700 flex items-center justify-center p-4">
           <img
             className="max-h-full max-w-full object-contain"
             src={coverPhoto}

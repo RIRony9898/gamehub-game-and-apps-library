@@ -1,13 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router';
 import { Download, Star } from "lucide-react";
+import { Link } from "react-router";
 
-const AppsCard = ({app}) => {
-    const { title, coverPhoto, downloaded, ratings } = app;
-    return (
-        <Link to={`/apps/${app.id}`}>
+const AppsCard = ({ app }) => {
+  const { title, coverPhoto, downloaded, ratings } = app;
+  return (
+    <Link to={`/apps/${app.id}`}>
       <div className="card w-full bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-lg overflow-hidden transform hover:scale-105">
-        <figure className="h-48 w-full bg-gray-100 flex items-center justify-center p-4">
+        <figure className="h-48 w-full bg-slate-700 flex items-center justify-center p-4">
           <img
             className="max-h-full max-w-full object-contain"
             src={coverPhoto}
@@ -31,7 +30,7 @@ const AppsCard = ({app}) => {
         </div>
       </div>
     </Link>
-    );
+  );
 };
 
 export default AppsCard;

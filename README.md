@@ -1,16 +1,96 @@
-# React + Vite
+# Gamehub - A Game & Apps Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Gamehub is a modern, responsive web application built with React and Vite, designed as a comprehensive game and app library. It features user authentication, dynamic content display, and interactive elements to provide an engaging experience for users to explore and manage their favorite games and apps.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 **Live URL:** [https://best-store-9898.netlify.app/](https://best-store-9898.netlify.app/)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **User Authentication:** Secure login and registration with Firebase, including Google sign-in and password reset functionality
+- **Responsive Design:** Fully responsive layout that works seamlessly across desktop, tablet, and mobile devices
+- **Dynamic Content:** Browse through 20+ popular games and apps with detailed information
+- **Interactive UI:** Carousel banners, marquee scrolling sections, and smooth animations
+- **User Profile Management:** Update profile information, change passwords, and view installed apps
+- **Newsletter Subscription:** Functional newsletter signup with email validation
+- **Private Routes:** Protected pages for authenticated users only
+- **Installation Simulation:** Mock installation feature for games and apps with animations
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+
+- **React 19** - Modern React with hooks and functional components
+- **Vite** - Fast build tool and development server
+- **React Router 7** - Client-side routing with protected routes
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **DaisyUI** - Component library for Tailwind CSS
+
+### Libraries & Tools
+
+- **Firebase** - Authentication and backend services
+- **React Toastify** - Toast notifications
+- **React Fast Marquee** - Scrolling marquee component
+- **React Spring** - Animation library
+- **Lucide React** - Icon library
+- **Axios** - HTTP client for API calls
+
+
+### Key Dependencies
+
+- `react-fast-marquee` - Smooth scrolling animations
+- `react-spring` - Physics-based animations
+
+
+## Project Structure
+
+```
+src/
+├── AuthContexts/          # Authentication context and provider
+├── Components/            # Reusable UI components
+│   ├── HomePage/         # Homepage specific components
+│   ├── ProfilePage/      # Profile management components
+│   └── animation/        # Animation components
+├── Hooks/                # Custom React hooks
+├── Pages/                # Page components
+├── Routes/               # Routing configuration
+├── context/              # React contexts
+├── Firebase/             # Firebase configuration
+└── assets/               # Static assets
+
+public/
+├── games.json            # Games data
+├── apps.json             # Apps data
+└── CNAME                 # Netlify deployment configuration
+```
+
+
+## Authentication Features
+
+- Email/password authentication
+- Google OAuth integration
+- Password reset via email
+- Protected routes for authenticated users
+- Profile update functionality
+
+## Responsive Design
+
+The application is fully responsive with breakpoints for:
+
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.

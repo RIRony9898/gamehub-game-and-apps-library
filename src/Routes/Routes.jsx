@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router";
+import PasswordChange from "../Components/ProfilePage/PasswordChange";
+import ProfileUpdate from "../Components/ProfilePage/ProfileUpdate";
 import RootLayout from "../Layouts/RootLayout";
 import AppsDetails from "../Pages/AppsDetails";
 import AppsPage from "../Pages/AppsPage";
@@ -9,10 +11,8 @@ import Home from "../Pages/Home";
 import InstalledPage from "../Pages/InstalledPage";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
-import PrivateRoute from "./PrivateRoute";
 import UserProfile from "../Pages/UserProfile";
-import PasswordChange from "../Components/ProfilePage/PasswordChange";
-import ProfileUpdate from "../Components/ProfilePage/ProfileUpdate";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {

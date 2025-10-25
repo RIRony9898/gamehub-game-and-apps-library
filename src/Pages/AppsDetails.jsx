@@ -1,12 +1,17 @@
 import { Download, Star } from "lucide-react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router";
+import { toast } from "react-toastify";
+import InstallButtonAnimation from "../Components/animation/InstallButtonAnimation";
+import {
+  StyledInstallButton,
+  TriggerEdge,
+  TriggerLabel,
+  TriggerShadow,
+} from "../Components/animation/StyledInstallButton";
+import { InstallationContext } from "../context/installationContextObject";
 import useApps from "../Hooks/useApps";
 import useTitle from "../Hooks/useTitle";
-import { useContext, useState} from "react";
-import { InstallationContext } from "../context/installationContextObject";
-import { toast } from "react-toastify";
-import { StyledInstallButton, TriggerShadow, TriggerEdge, TriggerLabel } from "../Components/animation/StyledInstallButton";
-import InstallButtonAnimation from "../Components/animation/InstallButtonAnimation";
 
 const AppsDetails = () => {
   const { id } = useParams();
@@ -15,7 +20,9 @@ const AppsDetails = () => {
   const { installApp, installedApps } = useContext(InstallationContext);
   const [showInstallModal, setShowInstallModal] = useState(false);
 
-  const isInstalled = installedApps.some((installedApp) => installedApp.id === app?.id);
+  const isInstalled = installedApps.some(
+    (installedApp) => installedApp.id === app?.id
+  );
 
   useTitle(app ? app.title : "App Details");
 
@@ -56,7 +63,7 @@ const AppsDetails = () => {
       downloads: app.downloaded,
       ratingAvg: app.ratings,
       size: app.size,
-      userEmail: "", 
+      userEmail: "",
     };
     installApp(appToInstall);
     toast.success(`${app.title} installed successfully!`);
@@ -65,68 +72,113 @@ const AppsDetails = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="md:col-span-1">
-          <img
-            className="w-full h-auto rounded-lg shadow-lg"
-            src={coverPhoto}
-            alt={title}
-          />
-        </div>
-        <div className="md:col-span-2">
-          <h1 className="text-4xl font-bold mb-4">{title}</h1>
-          <p className="text-gray-600 mb-4">{description}</p>
-          <div className="flex items-center mb-4">
-            <div className="flex items-center mr-4">
-              <Star className="w-6 h-6 mr-1 text-yellow-500 fill-current" />
-              <span className="font-bold">{ratings}</span>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 animate-fade-in">
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden animate-slide-up">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+              {/* Image Section */}
+              <div className="lg:col-span-1 relative">
+                <div className="h-96 lg:h-full overflow-hidden rounded-l-3xl">
+                  <img
+                    className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+                    src={coverPhoto}
+                    alt={title}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-l-3xl"></div>
+                </div>
+              </div>
+
+              {/* Details Section */}
+              <div className="lg:col-span-2 p-8 lg:p-12">
+                <div className="space-y-6">
+                  <div>
+                    <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                      {title}
+                    </h1>
+                    <p className="text-gray-300 text-lg leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
+
+                  {/* Stats */}
+                  <div className="flex flex-wrap items-center gap-6">
+                    <div className="flex items-center bg-yellow-500/20 rounded-full px-4 py-2">
+                      <Star className="w-5 h-5 mr-2 text-yellow-400 fill-current" />
+                      <span className="font-semibold text-yellow-400">
+                        {ratings}
+                      </span>
+                    </div>
+                    <div className="flex items-center bg-blue-500/20 rounded-full px-4 py-2">
+                      <Download className="w-5 h-5 mr-2 text-blue-400" />
+                      <span className="font-semibold text-blue-400">
+                        {downloaded}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Info */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-white/5 rounded-xl p-4">
+                      <p className="text-gray-400 text-sm font-medium mb-1">
+                        Category
+                      </p>
+                      <p className="text-white font-semibold">{category}</p>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-4">
+                      <p className="text-gray-400 text-sm font-medium mb-1">
+                        Developer
+                      </p>
+                      <p className="text-white font-semibold">{developer}</p>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-4">
+                      <p className="text-gray-400 text-sm font-medium mb-1">
+                        Size
+                      </p>
+                      <p className="text-white font-semibold">{size}</p>
+                    </div>
+                  </div>
+
+                  {/* Buttons */}
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <StyledInstallButton
+                      onClick={handleInstall}
+                      disabled={isInstalled}
+                      className="transition-transform duration-200 hover:scale-105"
+                    >
+                      <TriggerShadow />
+                      <TriggerEdge />
+                      <TriggerLabel>
+                        {isInstalled ? "Installed" : "Install Now"}
+                      </TriggerLabel>
+                    </StyledInstallButton>
+                    <a
+                      href={googlePlayLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      Google Play
+                    </a>
+                    <a
+                      href={appleStoreLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      Apple Store
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center">
-              <Download className="w-6 h-6 mr-1 text-blue-600" />
-              <span className="font-bold">{downloaded}</span>
-            </div>
-          </div>
-          <div className="mb-4">
-            <p>
-              <span className="font-bold">Category:</span> {category}
-            </p>
-            <p>
-              <span className="font-bold">Developer:</span> {developer}
-            </p>
-            <p>
-              <span className="font-bold">Size:</span> {size}
-            </p>
-          </div>
-          <div className="flex gap-4">
-            <StyledInstallButton
-              onClick={handleInstall}
-              disabled={isInstalled}
-            >
-              <TriggerShadow />
-              <TriggerEdge />
-              <TriggerLabel>{isInstalled ? "Installed" : "Install Now"}</TriggerLabel>
-            </StyledInstallButton>
-            <a
-              href={googlePlayLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-            >
-              Google Play
-            </a>
-            <a
-              href={appleStoreLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded"
-            >
-              Apple Store
-            </a>
           </div>
         </div>
       </div>
-      <InstallButtonAnimation isOpen={showInstallModal} onClose={() => setShowInstallModal(false)} />
+      <InstallButtonAnimation
+        isOpen={showInstallModal}
+        onClose={() => setShowInstallModal(false)}
+      />
     </div>
   );
 };

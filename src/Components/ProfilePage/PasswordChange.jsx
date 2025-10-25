@@ -77,17 +77,19 @@ const PasswordChange = () => {
 
   return (
     <Container>
-      <div className="min-h-screen py-10">
+      <div className=" py-10 bg-gradient-to-br from-blue-900 via-purple-900/80 to-blue-900">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-base-100 shadow-lg rounded-lg p-8">
-            <h1 className="text-3xl font-bold mb-6 text-center">
+          <div className="bg-slate-700 shadow-lg rounded-lg p-8">
+            <h1 className="text-3xl font-bold mb-6 text-center text-white">
               Change Password
             </h1>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">New Password</span>
+                  <span className="label-text text-white mr-2">
+                    New Password
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -110,7 +112,9 @@ const PasswordChange = () => {
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Confirm New Password</span>
+                  <span className="label-text text-white mr-2">
+                    Confirm New Password
+                  </span>
                 </label>
                 <div className="relative">
                   <input
@@ -142,7 +146,7 @@ const PasswordChange = () => {
               <div className="flex gap-4">
                 <button
                   type="submit"
-                  className={`btn btn-primary flex-1 ${
+                  className={`bg-purple-600 hover:bg-purple-700 text-white border-purple-600 px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-purple-500/25 transition-all duration-300 flex-1 ${
                     loading ? "loading" : ""
                   }`}
                   disabled={loading}
@@ -151,7 +155,7 @@ const PasswordChange = () => {
                 </button>
                 <button
                   type="button"
-                  className="btn btn-outline flex-1"
+                  className="bg-transparent hover:bg-white/10 text-white border-2 border-purple-400 hover:border-purple-300 px-8 py-3 text-lg font-semibold rounded-full backdrop-blur-sm transition-all duration-300 flex-1"
                   onClick={() => navigate("/profile")}
                 >
                   Cancel

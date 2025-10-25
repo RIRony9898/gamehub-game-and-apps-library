@@ -51,6 +51,7 @@ const AuthProvider = ({ children }) => {
     return updatePassword(auth.currentUser, newPassword);
   };
 
+  // reset password
   const resetPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
   };

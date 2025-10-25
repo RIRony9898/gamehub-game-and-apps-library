@@ -9,7 +9,7 @@ import Newsletter from "../Components/HomePage/Newsletter";
 const Home = () => {
   useTitle("Home");
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900/80 to-blue-900">
       <Container>
         <section>
           <Banner />

@@ -2,7 +2,7 @@ import { Download, Star, Trash2 } from "lucide-react";
 
 const InstalledAppsCard = ({ app, onUninstall }) => {
   return (
-    <div className="bg-base-100 shadow-lg rounded-lg overflow-hidden w-full transition-all duration-300 hover:shadow-2xl flex flex-col sm:flex-row sm:items-center">
+    <div className="bg-slate-200 shadow-lg rounded-lg overflow-hidden w-full transition-all duration-300 hover:shadow-2xl flex flex-col sm:flex-row sm:items-center ">
       {/* app image */}
       <figure className="w-full h-48 sm:w-40 sm:h-40 flex-shrink-0 p-5">
         <img
@@ -21,7 +21,7 @@ const InstalledAppsCard = ({ app, onUninstall }) => {
           </h2>
 
           {/* App Info */}
-          <div className="flex items-center flex-wrap gap-x-4 gap-y-1 text-sm text-gray-500">
+          <div className="flex items-center flex-wrap gap-x-4 gap-y-1 text-sm text-slate-700">
             <div className="flex items-center text-blue-600 font-semibold">
               <Download className="w-5 h-5 mr-1" />
               <span>{app.downloads}</span>
