@@ -43,16 +43,28 @@ const Navbar = () => {
         </NavLink>
       </li>
       {user && (
-        <li>
-          <NavLink
-            to={"/installed"}
-            className={({ isActive }) =>
-              isActive ? "text-red-500 font-bold" : "text-black"
-            }
-          >
-            Installed
-          </NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink
+              to={"/installed"}
+              className={({ isActive }) =>
+                isActive ? "text-red-500 font-bold" : "text-black"
+              }
+            >
+              Installed
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"/profile"}
+              className={({ isActive }) =>
+                isActive ? "text-red-500 font-bold" : "text-black"
+              }
+            >
+              Profile
+            </NavLink>
+          </li>
+        </>
       )}
     </>
   );
@@ -102,16 +114,18 @@ const Navbar = () => {
               <>
                 {user.photoURL ? (
                   <>
+                    <Link to={'/profile'}>
                     <div className="avatar">
                       <div className="w-10 rounded-full mx-2">
                         <img src={user.photoURL} />
                       </div>
                     </div>
+                    </Link>
                   </>
                 ) : null}
-                <p className="mr-4 font-semibold">
+                <Link to={"/profile"} className="mr-4 font-semibold">
                   {user.displayName || user.email}
-                </p>
+                </Link>
                 <button onClick={handleSignOut} className="btn">
                   Sign out
                 </button>

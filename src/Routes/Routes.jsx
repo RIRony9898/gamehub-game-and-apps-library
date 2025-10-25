@@ -10,6 +10,7 @@ import InstalledPage from "../Pages/InstalledPage";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import UserProfile from "../Pages/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <InstalledPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <UserProfile />
           </PrivateRoute>
         ),
       },
