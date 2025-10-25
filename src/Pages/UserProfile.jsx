@@ -1,30 +1,25 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 import { AuthContext } from "../AuthContexts/AuthContext";
 import Container from "../Components/Container";
 import useTitle from "../Hooks/useTitle";
 
 const UserProfile = () => {
   useTitle("Profile");
-  const { user } = useContext(AuthContext);
+  const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  //   if (!user) {
-  //     return (
-  //       <Container>
-  //         <div className="min-h-screen flex items-center justify-center">
-  //           <div className="text-center">
-  //             <h2 className="text-3xl font-bold mb-4">
-  //               Please sign in to view your profile
-  //             </h2>
-  //             <p className="text-lg text-gray-600">
-  //               You need to be logged in to access this page.
-  //             </p>
-  //           </div>
-  //         </div>
-  //       </Container>
-  //     );
-  //   }
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        toast.success("Signed out successfully!");
+        navigate("/");
+      })
+      .catch(() => {
+        toast.error("Failed to sign out. Please try again.");
+      });
+  };
 
   return (
     <Container>
@@ -129,6 +124,12 @@ const UserProfile = () => {
                   onClick={() => navigate("/installed")}
                 >
                   View Installed Apps
+                </button>
+                <button
+                  className="btn btn-error w-full"
+                  onClick={handleSignOut}
+                >
+                  Sign Out
                 </button>
               </div>
             </div>
