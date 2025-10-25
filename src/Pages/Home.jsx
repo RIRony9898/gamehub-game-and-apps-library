@@ -4,6 +4,7 @@ import Banner from "../Components/HomePage/Banner";
 import PopularGames from "../Components/HomePage/PopularGames";
 import PopularApps from "../Components/HomePage/PopularApps";
 import useTitle from "../Hooks/useTitle";
+import Newsletter from "../Components/HomePage/Newsletter";
 
 const Home = () => {
   useTitle("Home");
@@ -18,6 +19,9 @@ const Home = () => {
         </section>
         <section>
           <PopularApps />
+        </section>
+        <section>
+          <Newsletter/>
         </section>
       </Container>
     </div>
