@@ -63,7 +63,7 @@ const Banner = () => {
     <div className="relative">
       <div
         ref={carouselRef}
-        className="carousel w-full h-96 md:h-[500px] lg:h-[600px] overflow-hidden"
+        className="carousel w-full h-80 md:h-[400px] lg:h-[500px] overflow-hidden"
       >
         {slides.map((slide, index) => (
           <div

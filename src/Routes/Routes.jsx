@@ -13,6 +13,9 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import UserProfile from "../Pages/UserProfile";
 import PrivateRoute from "./PrivateRoute";
+import About from "../Pages/About";
+import Support from "../Pages/Support";
+import Contact from "../Pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -87,6 +90,18 @@ const router = createBrowserRouter([
             <ProfileUpdate />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/support",
+        element: <Support />,
       },
     ],
   },

@@ -49,6 +49,42 @@ const Navbar = () => {
           Apps
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to={"/about"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-purple-400 font-bold"
+              : "text-gray-300 hover:text-purple-400 transition-colors duration-200"
+          }
+        >
+          About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/contact"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-purple-400 font-bold"
+              : "text-gray-300 hover:text-purple-400 transition-colors duration-200"
+          }
+        >
+          Contact
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/support"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-purple-400 font-bold"
+              : "text-gray-300 hover:text-purple-400 transition-colors duration-200"
+          }
+        >
+          Support
+        </NavLink>
+      </li>
       {user && (
         <>
           <li>
@@ -80,7 +116,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 shadow-lg border-b border-purple-800">
+    <div className="sticky top-0 z-50 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 shadow-lg border-b border-purple-800">
       <Container>
         <div className="navbar">
           <div className="navbar-start">
