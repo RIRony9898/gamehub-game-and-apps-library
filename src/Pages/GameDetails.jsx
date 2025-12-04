@@ -1,6 +1,6 @@
 import { Download, Star } from "lucide-react";
 import { useContext, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { toast } from "react-toastify";
 import InstallButtonAnimation from "../Components/animation/InstallButtonAnimation";
 import {
@@ -12,12 +12,15 @@ import {
 import { InstallationContext } from "../context/installationContextObject";
 import useGames from "../Hooks/useGames";
 import useTitle from "../Hooks/useTitle";
+import { AuthContext } from "../AuthContexts/AuthContext";
 
 const GameDetails = () => {
   const { id } = useParams();
   const { games, loading } = useGames();
   const game = games.find((g) => g.id === id);
   const { installApp, installedApps } = useContext(InstallationContext);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [showInstallModal, setShowInstallModal] = useState(false);
 
   const isInstalled = installedApps.some((app) => app.id === game?.id);
@@ -54,6 +57,11 @@ const GameDetails = () => {
   } = game;
 
   const handleInstall = () => {
+    if (!user) {
+      toast.error("Login first to install");
+      navigate("/login");
+      return;
+    }
     const appToInstall = {
       id: game.id,
       image: game.coverPhoto,

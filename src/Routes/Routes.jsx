@@ -42,9 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/game/:id",
         element: (
-          <PrivateRoute>
             <GameDetails />
-          </PrivateRoute>
         ),
       },
       {
@@ -54,9 +52,7 @@ const router = createBrowserRouter([
       {
         path: "/apps/:id",
         element: (
-          <PrivateRoute>
             <AppsDetails />
-          </PrivateRoute>
         ),
       },
       {
